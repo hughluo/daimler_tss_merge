@@ -2,7 +2,7 @@
 
 ## Algorithm
 1. Sort the input array by the first index(low) of interval.
-2. Merge the interval one by one. If the current interval and the last interval do not overlap, append the current interval to result. Else merge and update the last interval in result.
+2. Merge the interval one by one. If the current interval in the input and the last interval of the result do not overlap, append the current interval from input to result. Else merge the current interval into the last interval of the result.
 
 ## Boundaries
 If given input is empty, an empty output will be returned.
