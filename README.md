@@ -5,11 +5,15 @@
 2. Merge the interval one by one. If the current interval and the last interval do not overlap, append the current interval to result. Else merge and update the last interval in result.
 
 ## Boundaries
+If given input is empty, an empty output will be returned.
+
+If any of these checks failed, user defined InputError will be raised:
+
 * Check each interval has only two entries, the first is low and the second is high.
 * Check low is less than high for each interval. (Not "less or equal")
-If any of these checks above failed, user defined InputError will be raised. 
 
-If given input is empty, an empty output will be returned.
+
+
 
 ## Complexity Analysis
 Assume we have N intervals to merge.
