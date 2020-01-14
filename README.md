@@ -5,7 +5,7 @@
 2. Merge the interval one by one. If the current interval in the input and the last interval of the result do not overlap, append the current interval from input to result. Else merge the current interval into the last interval of the result.
 
 ## Boundaries
-If given input is empty, an empty output will be returned.
+If the given input is empty, an empty output will be returned.
 
 If any of these checks failed, user defined `InputError` will be raised:
 
@@ -23,4 +23,4 @@ Merge one by one takes O(N) time and O(N) space, since it generate the result.
 Therefore, overall time complexity would be O(NlogN), space complexity would be O(N).
 
 ## For tremendous input size
-This algorithm can be easily implemented mapreduce-wise. We can partition the input array into subarrays and apply MERGE to each subarray.
+This algorithm can be easily implemented mapreduce-wise. We can partition the input array into subarrays and apply `MERGE` to each subarray. Afterwards we merge the `MERGED` subarray into the end result.
