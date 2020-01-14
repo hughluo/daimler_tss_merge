@@ -2,6 +2,12 @@ import unittest
 from merge import is_overlapping, merge_interval, merge
 from Error import InputError
 
+"""
+Unittest of merge.
+"""
+__author__ = "Yinchi Wexort Luo"
+__email__ = "yinchi.luo@gmail.com"
+
 
 class TestMerge(unittest.TestCase):
     def setUp(self):

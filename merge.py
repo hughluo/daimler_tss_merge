@@ -1,5 +1,11 @@
 from Error import InputError
 
+"""
+Main module of merge.
+"""
+__author__ = "Yinchi Wexort Luo"
+__email__ = "yinchi.luo@gmail.com"
+
 
 def merge(list_to_merge):
     if not list_to_merge:
