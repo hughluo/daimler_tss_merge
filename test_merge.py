@@ -2,9 +2,10 @@ import unittest
 from merge import is_overlapping, merge_interval, merge
 from Error import InputError
 
+
 class TestMerge(unittest.TestCase):
     def setUp(self):
-        
+
         # testcase that not overlap
         self.case0 = ([1, 5], [10, 12])
         self.case0_res = [[1, 5], [10, 12]]
@@ -27,7 +28,6 @@ class TestMerge(unittest.TestCase):
         self.case_invalid_0 = [[25, 30], [2, 19], [23, 14], [4, 8]]
         self.case_invalid_1 = [[25, 30], [2, 19, 18], [23, 14], [4, 8]]
 
-
     def test_is_overlapping(self):
         self.assertTrue(not is_overlapping(*self.case0))
         self.assertTrue(not is_overlapping(*self.case1))
@@ -42,9 +42,10 @@ class TestMerge(unittest.TestCase):
         self.assertEqual(merge(list(self.case0)), self.case0_res)
         self.assertEqual(merge(self.case_long_0), self.case_long_0_res)
         self.assertEqual(merge(self.case_long_1), self.case_long_1_res)
-        self.assertRaisesRegex(InputError, "invalid input", merge, self.case_invalid_0)
-        self.assertRaisesRegex(InputError, "invalid input", merge, self.case_invalid_1)
-
+        self.assertRaisesRegex(InputError, "invalid input",
+                               merge, self.case_invalid_0)
+        self.assertRaisesRegex(InputError, "invalid input",
+                               merge, self.case_invalid_1)
 
 
 if __name__ == '__main__':
