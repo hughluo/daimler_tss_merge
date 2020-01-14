@@ -49,7 +49,6 @@ class TestMerge(unittest.TestCase):
         self.assertEqual(merge_interval(*self.case3), self.case3_res)
 
     def test_merge(self):
-        self.assertEqual(merge(list(self.case0)), self.case0_res)
         self.assertEqual(merge(self.case_long_0), self.case_long_0_res)
         self.assertEqual(merge(self.case_long_1), self.case_long_1_res)
         self.assertEqual(merge(self.case_long_2), self.case_long_2_res)
