@@ -29,6 +29,10 @@ class TestMerge(unittest.TestCase):
         self.case_long_0_res = [[2, 23], [25, 30]]
         self.case_long_1 = []
         self.case_long_1_res = []
+        self.case_long_2 = [[1, 2], [2, 6], [8, 10], [15, 18]]
+        self.case_long_2_res = [[1, 6], [8, 10], [15, 18]]
+        self.case_long_3 = [[-3, 5], [-12, 2], [7, 10]]
+        self.case_long_3_res = [[-12, 5], [7, 10]]
 
         # invalid input test
         self.case_invalid_0 = [[25, 30], [2, 19], [23, 14], [4, 8]]
@@ -48,6 +52,8 @@ class TestMerge(unittest.TestCase):
         self.assertEqual(merge(list(self.case0)), self.case0_res)
         self.assertEqual(merge(self.case_long_0), self.case_long_0_res)
         self.assertEqual(merge(self.case_long_1), self.case_long_1_res)
+        self.assertEqual(merge(self.case_long_2), self.case_long_2_res)
+        self.assertEqual(merge(self.case_long_3), self.case_long_3_res)
         self.assertRaisesRegex(InputError, "invalid input",
                                merge, self.case_invalid_0)
         self.assertRaisesRegex(InputError, "invalid input",
