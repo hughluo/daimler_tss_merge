@@ -8,16 +8,18 @@ def merge(list_to_merge):
     if not is_valid_input(list_to_merge):
         raise InputError('invalid input')
 
-    # sort input list according to the low (first entry) of each interval
+    # inplace sort input list according to the low (first entry) of each interval
     list_to_merge.sort(key=lambda ls: ls[0])
 
     res = []
     for i in range(len(list_to_merge)):
         interval = list_to_merge[i]
-        if not res:
+        if not res:  # init res
             res.append(interval)
 
-        if not is_overlapping(res[-1], interval):
+        # If the current interval in the input and the last interval of the result do not overlap, append the current interval from input to result
+        # Else merge the current interval into the last interval of the result.
+        if not is_overlapping(interval, res[-1]):
             res.append(interval)
         else:
             res[-1] = merge_interval(res[-1], interval)
